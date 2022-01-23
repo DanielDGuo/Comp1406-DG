@@ -1,0 +1,88 @@
+Create a class hierarchy for the following classes to be used in a software system modelling a university: Person, Exam, Employee, Instructor, Student, FullTimeStudent, Midterm, Professor, PartTimeStudent, CourseWork, Administrator, Assignment, ClassRoom. For each class, indicate what other class it would inherit from, if any (e.g., “Student extends Exam”), and include a brief explanation of why you think this class should (or should not) inherit from another. Note that you do not need to fully develop the classes. You only need to indicate which classes extend from others and provide your explanation. Your explanation could refer to some state or behaviour that you anticipate the classes having. You may add additional classes into the design if you think it is appropriate (provide justification). If you are unfamiliar with what one of the class names represents (e.g., you are unsure of what an administrator is), write your assumptions about what that class would represent within the system and incorporate it into the class hierarchy based on those assumptions. Within reason, correctly reasoning about the class hierarchy can be considered just as important as recreating the expected solution.
+
+
+Starting from the roots, the class heirarchy may look like the following:
+Person
+	Employee extends Person
+		Professor extends Employee
+			Instructor extends Professor
+		Administrator extends Employee
+	Student extends Person
+		PartTimeStudent extends Student
+		FullTimeStudent extends Student
+CourseWork
+	Assignment extends CourseWork
+	Test extends CourseWork
+		Midterm extends CourseWork
+		Exam extends CourseWork
+ClassRoom
+
+The following lists the reasons why.
+As inheritance is a "is a" relationship, going from more general things to more specific is the goal. As such:
+Since a 'Person' is much more general than an 'Employee' or 'Student', it is a root, and both 'Employee' and 'Student' inherit its properties.
+The same is true between a 'Professor' and a 'Administrator', which are employees of a university, and an 'Instructor', which is a 'Professor'
+that teaches. A student could either be a part time student or a full time student, which have different schedules but are still both students 
+of the university. 
+
+'CourseWork', 'Assignments', 'Midterms', and 'Exams' are all not 'People'. However, they are all things you have to do as a student. The most 
+general of the list is 'CourseWork', which can be anything. As such, 'Assignments', 'Midterms', and 'Exams' all extend it. It can also be noted 
+that 'Exams' could potentially have extended 'Midterms', however I felt as though the correlation wasn't strong enough. An exam is not a midterm,
+nor is a midterm an exam, but both are tests. As such, I had implemented a 'Test' class.
+
+'ClassRoom' was the odd one out. It was neither a person, nor course work, and as such I put it in its own "tree".
+
+Here's the list again, but with short descriptions of why.
+Person (a person isn't anything else that's given)
+	Employee extends Person (employees are people)
+		Professor extends Employee(professors are employees and also people)
+			Instructor extends Professor(instructors are professors also employees also people)
+		Administrator extends Employee(is a employees that's a person)
+	Student extends Person(a student is a person)
+		PartTimeStudent extends Student(student which is a person)
+		FullTimeStudent extends Student(student which is a person)
+CourseWork(not a person)
+	Assignment extends CourseWork(assignments are work given by a course)
+	Test extends CourseWork(see above)
+		Midterm extends CourseWork(is a test)
+		Exam extends CourseWork(is a test)
+ClassRoom(not a person not work. Is instead a room)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I see that doge in the String Collection Tester file
+                   ▄              ▄
+                  ▌▒█           ▄▀▒▌
+                  ▌▒▒█        ▄▀▒▒▒▐
+                 ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
+               ▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐
+             ▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌
+            ▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌
+            ▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐
+           ▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌
+           ▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌
+          ▌▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐
+          ▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+          ▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐
+           ▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌
+           ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐
+            ▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌
+              ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀
+                ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀
+                   ▒▒▒▒▒▒▒▒▒▒▀▀

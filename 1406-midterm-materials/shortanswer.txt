@@ -1,0 +1,39 @@
+Explain each of the following terms in your own words: abstraction, encapsulation, inheritance, polymorphism. 
+Discuss the benefits each can provide when developing OOP software, especially in larger, longer-running projects involving multiple developers. 
+You should include comments regarding how each could affect the maintainability, extensibility, and robustness of the software. 
+You may also include arguments or examples based on your own experience within 1405/1406.
+
+
+a) Abstraction
+	Removes/lowers the complexity of information from inner mechanisms of code. For example, the code inside a method is usually abstracted away and makes 
+	it able to treated as a sort of black-box; Something goes in, the method works on it, and the wanted result comes out. With this, an entire team isn't 
+	required to understand how each method works or how it was made, just what it does. This also allows multiple pieces of code to be combined easily, as 
+	long as specifications are set and met. In addition, this makes code maintenance easier, as the abstracted code does not need to be reviewed more than 
+	once, assuming nothing is being modified.
+	
+	Abtracted code also aids in large scale projects, as it is easier to share what something does, rather than having to explain all the inner workings. Code
+	can easily be added on outside of the abstracted object. The object/method itself shouldn't change, allowing it to be programmed to be robust and always 
+	function as expected.
+	
+
+b) Encapsulation
+	Encapsulation promotes abstraction by forcing it upon the user. Encapsulation prevents change, making abstracted code more robust when inplemented. This
+	way, code isn't as likely(possible with public setter methods, but you'd have to go out of your way) to be inadvertantly changed by outside classes, and 
+	makes the program more robust. This makes abstracted black-boxed code even more robust, akin to putting a lock on the "box". Setting a variable or method
+	to private in a class is an example of encapsulation. This, in tandum with abstraction, makes code more modular and maintainable.
+
+
+c) Inheritance
+	With having multiple classes, attributes may be repeated. By allowing classes to be inherited, code can be easily repeated and have only small portions 
+	modified. For example, a dog and a cat class can both inherit the same properties from a mammal class, reducing the need to write two extremely similar
+	classes. In a large project, this saves a lot of time. In addition, code can be more easily be maintained by adjusting the parent class, which in turn
+	modifies its child classes without having to go in and out of all of them manually. Child classes can easily be implemented, and by forcing some methods,
+	the robustness of the code is also increased. Inheritance is a "is a" relationship between child and parent.
+	
+	
+d) Polymorphism
+	Polymorphism allows for child classes to be treated as it's parent class, or classes to be treated as an interface they implement. In turn, this allows 
+	for there to be code written in a generalized way. For example, a shape class can have a draw method, and its children classes inherit this property.
+	From there, a list of shapes can be looped through and all be drawn without having to specify the child class. This increases extensibility and robustness
+	by allowing for all future child classes to be easily added, yet still be able to interact with previous code. It also promotes inheritance, making maintenance
+	easier.
